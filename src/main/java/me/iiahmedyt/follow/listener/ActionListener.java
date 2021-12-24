@@ -20,8 +20,8 @@ public class ActionListener implements Listener {
         event.getFight().getPlayersInFight().forEach(player -> {
             FollowPlayer followPlayer = instance.getFollowPlayer(player);
             followPlayer.getFollowers().forEach(follower -> {
-                follower.sendMessage(CC.trans(CC.getMessage("Log.Fight.Start"), follower)
-                        .replace("<followed>", player.getName()));
+                follower.sendMessage(CC.trans(CC.getMessage("Log.Fight.Start")
+                        .replace("<followed>", player.getName()), follower));
                 api.addSpectator(follower, player);
             });
         });
@@ -30,13 +30,11 @@ public class ActionListener implements Listener {
     @EventHandler
     public void fightEndEvent(FightEndEvent event){
         StrikeFollow instance = StrikeFollow.getInstance();
-        StrikePracticeAPI api = StrikePractice.getAPI();
         event.getFight().getPlayersInFight().forEach(player -> {
             FollowPlayer followPlayer = instance.getFollowPlayer(player);
-            followPlayer.getFollowers().forEach(follower -> {
-                follower.sendMessage(CC.trans(CC.getMessage("Log.Fight.End"), follower)
-                        .replace("<followed>", player.getName()));
-            });
+            followPlayer.getFollowers().forEach(follower ->
+                    follower.sendMessage(CC.trans(CC.getMessage("Log.Fight.End")
+                            .replace("<followed>", player.getName()), follower)));
         });
     }
 
@@ -76,11 +74,9 @@ public class ActionListener implements Listener {
         Player player = event.getParty().getOwnerPlayer();
         StrikeFollow instance = StrikeFollow.getInstance();
         FollowPlayer followPlayer = instance.getFollowPlayer(player);
-        StrikePracticeAPI api = StrikePractice.getAPI();
-        followPlayer.getFollowers().forEach(follower -> {
-            follower.sendMessage(CC.trans(CC.getMessage("Log.Party.Create"), follower)
-                    .replace("<followed>", player.getName()));
-        });
+        followPlayer.getFollowers().forEach(follower ->
+                follower.sendMessage(CC.trans(CC.getMessage("Log.Party.Create")
+                                .replace("<followed>", player.getName()), follower)));
     }
 
     @EventHandler
@@ -88,11 +84,9 @@ public class ActionListener implements Listener {
         Player player = event.getParty().getOwnerPlayer();
         StrikeFollow instance = StrikeFollow.getInstance();
         FollowPlayer followPlayer = instance.getFollowPlayer(player);
-        StrikePracticeAPI api = StrikePractice.getAPI();
-        followPlayer.getFollowers().forEach(follower -> {
-            follower.sendMessage(CC.trans(CC.getMessage("Log.Party.Disband"), follower)
-                    .replace("<followed>", player.getName()));
-        });
+        followPlayer.getFollowers().forEach(follower ->
+                follower.sendMessage(CC.trans(CC.getMessage("Log.Party.Disband")
+                        .replace("<followed>", player.getName()), follower)));
     }
 
     /*Cancelling queues (that event doesnt actually exist yet D:)

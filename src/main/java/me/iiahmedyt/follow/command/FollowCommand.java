@@ -42,7 +42,8 @@ public class FollowCommand implements CommandExecutor {
         Bukkit.getPluginManager().callEvent(event);
         if(event.isCancelled()) return true;
         if(followPlayer.follow(instance.getFollowPlayer(followed))){
-            follower.sendMessage(CC.trans(CC.getMessage("Follow.Success"), follower));
+            follower.sendMessage(CC.trans(replace(CC.getMessage("Follow.Success"),
+                    follower, followed), follower));
         } else {
             follower.sendMessage(replace(CC.trans
                             (CC.getMessage("Follow.Fail.CurrentlyFollowing"),
