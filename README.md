@@ -1,4 +1,3 @@
->StrikeFollow
  StrikeFollow is a follow system for StrikePractice
 
 >Commands
