@@ -36,7 +36,6 @@ public class ActionListener implements Listener {
             followPlayer.getFollowers().forEach(follower -> {
                 follower.sendMessage(CC.trans(CC.getMessage("Log.Fight.End"), follower)
                         .replace("<followed>", player.getName()));
-                api.removeSpectator(follower, false);
             });
         });
     }
@@ -65,6 +64,7 @@ public class ActionListener implements Listener {
         followPlayer.getFollowers().forEach(follower -> {
             follower.sendMessage(CC.trans(CC.getMessage("Log.Spectate.End"), follower)
                     .replace("<followed>", player.getName()));
+            follower.teleport(player);
             if(event.getFight().getSpectators().contains(follower))
                 api.removeSpectator(follower, true);
         });
@@ -80,7 +80,6 @@ public class ActionListener implements Listener {
         followPlayer.getFollowers().forEach(follower -> {
             follower.sendMessage(CC.trans(CC.getMessage("Log.Party.Create"), follower)
                     .replace("<followed>", player.getName()));
-            api.removeSpectator(follower, true);
         });
     }
 
@@ -93,8 +92,15 @@ public class ActionListener implements Listener {
         followPlayer.getFollowers().forEach(follower -> {
             follower.sendMessage(CC.trans(CC.getMessage("Log.Party.Disband"), follower)
                     .replace("<followed>", player.getName()));
-            api.removeSpectator(follower, true);
         });
     }
 
+    /*Cancelling queues (that event doesnt actually exist yet D:)
+    public void queueEvent(PlayerQueueEvent event){
+        FollowPlayer player = StrikeFollow.getInstance().getFollowPlayer(event.getPlayer());
+        if(player.isFollowing()){
+            event.setCancelled(true);
+        }
+    }
+    */
 }

@@ -82,10 +82,12 @@ public final class StrikeFollow extends JavaPlugin {
         StrikePracticeAPI api = StrikePractice.getAPI();
         if(api.isInFight(followed)){
             api.addSpectator(player.getPlayer(), followed);
+            player.getPlayer().teleport(followed.getPlayer());
             return;
         }
         if(api.isSpectator(followed)){
             api.addSpectator(player.getPlayer(), api.getSpectating(followed).getPlayersInFight().get(0));
+            player.getPlayer().teleport(followed.getPlayer());
             return;
         }
     }
