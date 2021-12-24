@@ -1,0 +1,21 @@
+prefix: '&f[&bFollow&f] '
+Follow:
+  Usage: '&c/follow <player>'
+  Success: '&fStarted following &b<followed>!'
+  Fail:
+    CurrentlyFollowing: '&fYou are already &cFOLLOWING &fsomeone..'
+    Not-Exist: '&fThere is &cNO &fonline player with that name.'
+Unfollow:
+  Auto: '&fYou have unfollowed &b<unfollowed> &fbecause they &cdisconnected&f.'
+  Success: '&fSuccessfully unfollowed <unfollowed>!'
+  Fail: '&fYou are &cnot following anyone currently.'
+Log:
+  Match:
+    Start: '&fPlayer &b<followed> &fhas started a match!'
+    End: '&fPlayer &b<followed> &fhas ended his current fight'
+  Spectate:
+    Start: '&fPlayer &b<followed> &fhas started spectating a match!'
+    End: '&fPlayer &b<followed> &fhas stopped spectating the match.'
+  Party:
+    Create: '&fPlayer &b<followed> &fhas created a party!'
+    Disband: "&fPlayer &b<followed>&f's party has been &cdisbanded."

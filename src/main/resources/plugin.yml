@@ -1,0 +1,9 @@
+name: StrikeFollow
+version: '${project.version}'
+main: me.iiahmedyt.follow.StrikeFollow
+author: iiAhmedYT
+depend: [ StrikePractice ]
+softdepend: [ PlaceholderAPI ]
+commands:
+  follow:
+  unfollow:
