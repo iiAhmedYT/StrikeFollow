@@ -19,7 +19,6 @@ public class UnfollowCommand implements CommandExecutor {
             sender.sendMessage(CC.trans("&cYou dont have permissions to run this command"));
             return true;
         }
-        if(args.length == 0){
             Player player = ((Player) sender).getPlayer();
             StrikeFollow instance = StrikeFollow.getInstance();
             FollowPlayer followPlayer = instance.getFollowPlayer(player);
@@ -33,7 +32,6 @@ public class UnfollowCommand implements CommandExecutor {
             player.sendMessage(CC.trans(CC.getMessage("Unfollow.Success"), player)
                     .replace("<unfollowed>", followPlayer.getFollowing().getPlayer().getName()));
             followPlayer.unfollow();
-        }
         return true;
     }
 
