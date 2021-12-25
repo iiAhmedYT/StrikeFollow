@@ -30,7 +30,7 @@ public class UnfollowCommand implements CommandExecutor {
             UnfollowEvent event = new UnfollowEvent(player, followPlayer.getFollowing().getPlayer());
             Bukkit.getPluginManager().callEvent(event);
             if(event.isCancelled()) return true;
-            player.sendMessage(CC.trans(CC.getMessage("Unfollow.success"), player)
+            player.sendMessage(CC.trans(CC.getMessage("Unfollow.Success"), player)
                     .replace("<unfollowed>", followPlayer.getFollowing().getPlayer().getName()));
             followPlayer.unfollow();
         }

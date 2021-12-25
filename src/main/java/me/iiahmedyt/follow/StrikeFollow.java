@@ -71,7 +71,9 @@ public final class StrikeFollow extends JavaPlugin {
         getFollowPlayer(player).getFollowers().forEach(follower -> {
             follower.sendMessage(CC.trans(CC.getMessage("Unfollow.Auto"), follower)
                     .replace("<followed>", player.getName()));
-            getFollowPlayer(player).unfollow();
+           FollowPlayer fFollower = getFollowPlayer(player);
+           fFollower.unfollow();
+           addFollowPlayer(follower, fFollower);
         });
         followPlayers.remove(player);
     }
