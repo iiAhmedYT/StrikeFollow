@@ -32,6 +32,10 @@ public class FollowCommand implements CommandExecutor {
             follower.sendMessage(CC.trans(CC.getMessage("Follow.Fail.Not-Exist"), follower));
             return true;
         }
+        if(followed == follower){
+            follower.sendMessage(CC.trans(CC.getMessage("Follow.Fail.Follow-Self")));
+            return true;
+        }
         if(followPlayer.isFollowing()){
             follower.sendMessage(replace(CC.trans
                     (CC.getMessage("Follow.Fail.CurrentlyFollowing"),

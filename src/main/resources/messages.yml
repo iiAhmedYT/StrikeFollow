@@ -5,6 +5,7 @@ Follow:
   Fail:
     CurrentlyFollowing: '&fYou are already &cFOLLOWING &fsomeone..'
     Not-Exist: '&fThere is &cNO &fonline player with that name.'
+    Follow-Self: "&cYou can't follow your self"
 Unfollow:
   Auto: '&fYou have unfollowed &b<unfollowed> &fbecause they &cdisconnected&f.'
   Success: '&fSuccessfully unfollowed <unfollowed>!'
