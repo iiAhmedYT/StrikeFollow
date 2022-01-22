@@ -1,3 +1,4 @@
+[![Code Grade](https://api.codiga.io/project/30767/score/svg)](https://www.codiga.io)
 ## StrikeFollow
  StrikeFollow is a follow system for StrikePractice
 
