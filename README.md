@@ -14,7 +14,7 @@ Permission: StrikeFollow.use
 
 Usage: /follow <playername>
 
-### Unollow
+### Unfollow
 
 Permission: StrikeFollow.use
 
