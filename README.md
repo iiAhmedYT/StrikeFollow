@@ -21,4 +21,5 @@ Permission: StrikeFollow.use
 Usage: /unfollow
 
 
-#### For support please contact me on the StrikePractice discord after you verify your purshase
+#### Support
+ if you have questions please contact me on the StrikePractice discord after you verify your purshase
