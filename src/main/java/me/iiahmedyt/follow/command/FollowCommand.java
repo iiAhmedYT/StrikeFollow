@@ -28,11 +28,11 @@ public class FollowCommand implements CommandExecutor {
         Player followed = Bukkit.getPlayer(name);
         StrikeFollow instance = StrikeFollow.getInstance();
         FollowPlayer followPlayer = instance.getFollowPlayer(follower);
-        if(followed == null){
+        if(followed.equals(null)){
             follower.sendMessage(CC.trans(CC.getMessage("Follow.Fail.Not-Exist"), follower));
             return true;
         }
-        if(followed == follower){
+        if(followed.equals(follower)){
             follower.sendMessage(CC.trans(CC.getMessage("Follow.Fail.Follow-Self")));
             return true;
         }
