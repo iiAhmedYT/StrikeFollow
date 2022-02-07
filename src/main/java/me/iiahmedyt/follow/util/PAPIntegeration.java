@@ -30,10 +30,10 @@ public class PAPIntegeration extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player player, @NotNull String placeholder) {
         FollowPlayer followPlayer = StrikeFollow.getInstance().getFollowPlayer(player);
-        if(placeholder.equalsIgnoreCase("isFollowing")){
+        if("isFollowing".equalsIgnoreCase(placeholder)){
             return String.valueOf(followPlayer.isFollowing());
         }
-        if(placeholder.equalsIgnoreCase("following")){
+        if("following".equalsIgnoreCase(placeholder)){
             if(!followPlayer.isFollowing()) return "NONE";
             String name = followPlayer.getFollowing().getPlayer().getName();
             return name == null? "NONE" : name;
