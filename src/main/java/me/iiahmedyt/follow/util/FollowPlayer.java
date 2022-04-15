@@ -23,7 +23,7 @@ public class FollowPlayer {
     }
 
     public boolean follow(FollowPlayer player){
-        if(following == player) return false;
+        if(following.equals(player)) return false;
         following = player;
         following.addFollower(this.player);
         StrikeFollow.getInstance().followStart(this);
