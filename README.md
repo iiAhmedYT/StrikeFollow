@@ -12,7 +12,7 @@
 
 Permission: StrikeFollow.use
 
-Usage: /follow <playername>
+Usage: /follow \<playername>
 
 > Unfollow
 
